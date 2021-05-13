@@ -4,7 +4,7 @@
 #include <cmath>
 #include "libforlab.h"
 
-using namespace std;
+
 
 int main() {
 
@@ -12,29 +12,29 @@ int main() {
 
     int i;
     double coef;
-    cout << "Enter the maximum degree of the polynomial." << endl;
-    cin >> maxDegree;
+   std::cout << "Enter the maximum degree of the polynomial." << std::endl;
+    std::cin >> maxDegree;
     check();
     if (maxDegree < 0) {
-        cout << "Error!Negative degree of the derivative!";
+       std:: cout << "Error!Negative degree of the derivative!";
         return 1;
     }
     if (maxDegree > 1000) {
-        cout << "Error! Too big degree man relax dont break my lab! ";
+       std:: cout << "Error! Too big degree man relax dont break my lab! ";
         return -1;
     }
-    double* arrCoef = new(nothrow) double[maxDegree];
-    double* arrCoefCopy = new(nothrow) double[maxDegree+1];
+    double* arrCoef = new(std::nothrow) double[maxDegree];
+    double* arrCoefCopy = new(std::nothrow) double[maxDegree+1];
     if ((!arrCoef)||(!arrCoefCopy)) {
-        cout << "Memory error!";
+       std:: cout << "Memory error!";
         return -1;
     }
     for (i = 0; i < maxDegree + 1; i++) {
         arrCoefCopy[i] = 0;
     }
     for (i = 0; i < maxDegree; i++) {
-        cout << "Enter the coefficient at x" << endl;
-        cin >> coef;
+        std::cout << "Enter the coefficient at x" << std::endl;
+        std::cin >> coef;
         check();
         arrCoef[i] = coef;
     }   
@@ -46,10 +46,10 @@ int main() {
     
 
     for (i = 0; i < maxDegree+1; i++) {
-        cout << "Coefficient at the degree of " << i << " = " << arrCoefCopy[i] << endl;
+        std::cout << "Coefficient at the degree of " << i << " = " << arrCoefCopy[i] << std::endl;
     }
 
-
+    delete[] arrCoefCopy;
     delete[] arrCoef;
     return 0;
 }

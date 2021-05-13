@@ -3,7 +3,7 @@
 #include <cctype>
 #include <cmath>
 
-using namespace std;
+
 void check() {
     if (cin.fail())
     {
